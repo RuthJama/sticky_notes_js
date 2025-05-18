@@ -1,0 +1,312 @@
+/* Responsive tweaks for fullscreen modal and content */
+@media (max-width: 700px) {
+  .fullscreen-content {
+    min-width: 0;
+    width: 96vw;
+    padding: 18vw 4vw 8vw 4vw;
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .fullscreen-content {
+    padding: 12vw 2vw 6vw 2vw;
+    font-size: 1rem;
+  }
+  .close-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1.2rem;
+    top: 6px;
+    right: 8px;
+  }
+}
+.fullscreen-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.fullscreen-btn:hover svg path {
+  fill: #81c784;
+}
+
+.fullscreen-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(44, 62, 80, 0.75);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fullscreen-content {
+  background: #fffde7;
+  border-radius: 18px;
+  padding: 36px 28px 28px 28px;
+  min-width: 320px;
+  max-width: 90vw;
+  max-height: 80vh;
+  box-shadow: 0 8px 32px rgba(251,192,45,0.18), 0 2px 12px rgba(0,0,0,0.08);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+.close-fullscreen-btn {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  background: #e57373;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 10;
+}
+.close-fullscreen-btn:hover {
+  background: #d32f2f;
+}
+
+.fullscreen-note-text {
+  font-size: 1.15rem;
+  color: #333;
+  margin-top: 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.edit-icon-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.edit-icon-btn:hover svg path {
+  fill: #81c784;
+}
+.note-btn-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.note-btn {
+  padding: 6px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  min-width: 70px;
+  margin-bottom: 4px;
+}
+
+.edit-btn {
+  background: #64b5f6;
+  color: #fff;
+}
+.edit-btn:hover {
+  background: #1976d2;
+}
+
+.save-btn {
+  background: #81c784;
+  color: #fff;
+}
+.save-btn:hover {
+  background: #388e3c;
+}
+
+.cancel-btn {
+  background: #ffe082;
+  color: #333;
+}
+.cancel-btn:hover {
+  background: #ffb300;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .note-btn-group {
+    flex-direction: column;
+    gap: 4px;
+    align-items: stretch;
+  }
+  .note-btn {
+    width: 100%;
+    min-width: 0;
+    font-size: 0.95rem;
+    padding: 8px 0;
+  }
+}
+.sticky-notes-board {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 24px 16px;
+  background: linear-gradient(135deg, #f7f7f7 60%, #e0f7fa 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+  min-height: 100vh;
+}
+
+.add-note {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-bottom: 32px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.add-note textarea {
+  flex: 1 1 220px;
+  min-height: 48px;
+  border-radius: 10px;
+  border: 1.5px solid #b2dfdb;
+  padding: 12px;
+  font-size: 1.1rem;
+  resize: vertical;
+  background: #f9fbe7;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: border 0.2s;
+}
+.add-note textarea:focus {
+  border: 1.5px solid #388e3c;
+  outline: none;
+}
+.add-note button {
+  padding: 10px 22px;
+  background: linear-gradient(90deg, #ffeb3b 70%, #ffe082 100%);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(255,235,59,0.08);
+}
+.add-note button:hover {
+  background: linear-gradient(90deg, #ffe066 70%, #fffde7 100%);
+  box-shadow: 0 4px 16px rgba(255,235,59,0.15);
+}
+
+.notes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.sticky-note {
+  border-radius: 16px;
+  padding: 18px 14px 14px 14px;
+  min-height: 140px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.12s, box-shadow 0.12s;
+  will-change: transform;
+  animation: sticky-pop 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+/* Theme styles for sticky notes */
+.theme-yellow {
+  background: #fffde7;
+  border: 2.5px solid #fbc02d;
+  box-shadow: 0 4px 18px rgba(251,192,45,0.10), 0 1.5px 6px rgba(0,0,0,0.04);
+}
+.theme-blue {
+  background: #e3f2fd;
+  border: 2.5px solid #64b5f6;
+  box-shadow: 0 4px 18px rgba(100,181,246,0.10), 0 1.5px 6px rgba(0,0,0,0.04);
+}
+.theme-green {
+  background: #e8f5e9;
+  border: 2.5px solid #81c784;
+  box-shadow: 0 4px 18px rgba(129,199,132,0.10), 0 1.5px 6px rgba(0,0,0,0.04);
+}
+.theme-pink {
+  background: #fce4ec;
+  border: 2.5px solid #f06292;
+  box-shadow: 0 4px 18px rgba(240,98,146,0.10), 0 1.5px 6px rgba(0,0,0,0.04);
+}
+.theme-purple {
+  background: #ede7f6;
+  border: 2.5px solid #9575cd;
+  box-shadow: 0 4px 18px rgba(149,117,205,0.10), 0 1.5px 6px rgba(0,0,0,0.04);
+}
+.sticky-note:hover {
+  transform: translateY(-4px) scale(1.03) rotate(-1deg);
+  box-shadow: 0 8px 32px rgba(251,192,45,0.18), 0 2px 12px rgba(0,0,0,0.08);
+}
+
+@keyframes sticky-pop {
+  0% { transform: scale(0.95) rotate(-2deg); opacity: 0.7; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.sticky-note textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  font-size: 1.08rem;
+  flex: 1;
+  outline: none;
+  color: #333;
+  width: 100%;
+  margin-top: 28px;
+}
+.delete-btn {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: #e57373;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.delete-btn:hover {
+  background: #d32f2f;
+}
